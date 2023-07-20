@@ -1,5 +1,5 @@
 {% set name = "biobox" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/Degiacomi-Lab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 749f5a546b4c6e17c369bf487c7ef08e5970f9da6c2f1b790a8e6efbb4804e85
+  sha256: 5c0e99b9743a71e5ed33cd24f55ab6d89206b8aee550dd55a03f3f8b5163cd2e
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -48,7 +48,7 @@ about:
   dev_url: https://github.com/Degiacomi-Lab/biobox
 
 extra:
-    recipe-maintainers:
-        - SCMusson
-        - degiacom
-        - dclw29
+  recipe-maintainers:
+    - SCMusson
+    - degiacom
+    - dclw29
