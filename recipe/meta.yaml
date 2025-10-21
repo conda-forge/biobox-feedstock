@@ -22,9 +22,10 @@ requirements:
     - python
     - pip
     - numpy
+    - setuptools
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - numpy
     - pandas
     - scipy
     - scikit-learn
