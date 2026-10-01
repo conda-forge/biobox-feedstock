@@ -1,5 +1,5 @@
 {% set name = "biobox" %}
-{% set version = "1.1.3" %}
+{% set version = "1.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/Degiacomi-Lab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: b678b77e51ec6c9cc9f4b02c3528583e63fd8b8f38f6c24e98eef5b4b83c846c
+  sha256: d1a8a0eaf9e23c8b400eaf9069f7fb25ab87a720ce40279c46507bc8a42987a8
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
