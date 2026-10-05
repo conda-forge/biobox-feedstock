@@ -5,13 +5,13 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/biobox-feedstoc
 
 Home: https://github.com/Degiacomi-Lab/biobox
 
-Package license: GPL-3.0-only
+Package license: GPL-2.0-or-later
 
 Summary: Biobox provides tools for loading, manipulating, and analysing atomistic and pseudoatomistic structures
 
 Development: https://github.com/Degiacomi-Lab/biobox
 
-Documentation: https://degiacomi-lab.github.io/biobox
+Documentation: https://biobox.readthedocs.io
 
 Biobox provides a collection of data structures and methods for loading,
 manipulating, and analyzing atomistic and pseudoatomistic structures.
