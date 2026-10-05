@@ -1,5 +1,5 @@
 {% set name = "biobox" %}
-{% set version = "1.1.5" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,46 +7,51 @@ package:
 
 source:
   url: https://github.com/Degiacomi-Lab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 4e4b181c046f54d052807960d7ca18fb8f70b0d607d6b00fed7ac8506e331c7c
+  sha256: 89579673e65ae7282644ca9eb636c82322f414e828613575e71d87488371f5f8
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<310]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - cython
+    - cython >=3.0
     - python
     - pip
-    - numpy
-    - setuptools
+    - numpy >=2.0
+    - setuptools >=77
   run:
     - python
-    - numpy
+    - numpy >=1.26
     - pandas
     - scipy
     - scikit-learn
+
 test:
   imports:
     - biobox
   source_files:
     - test
+  requires:
+    - pip
   commands:
+    - pip check
     - cd test
     - python test_biobox.py
 
 about:
   home: https://github.com/Degiacomi-Lab/biobox
   license_file: LICENSE
-  license: GPL-3.0-only
+  license: GPL-2.0-or-later
   summary: Biobox provides tools for loading, manipulating, and analysing atomistic and pseudoatomistic structures
   description: |
     Biobox provides a collection of data structures and methods for loading,
     manipulating, and analyzing atomistic and pseudoatomistic structures.
-  doc_url: https://degiacomi-lab.github.io/biobox
+  doc_url: https://biobox.readthedocs.io
   dev_url: https://github.com/Degiacomi-Lab/biobox
 
 extra:
